@@ -1,9 +1,5 @@
 #Requires -Modules CredentialManager
 
-$installationDirectory = ""
-
-Write-Host "The default installation directory is set to $installationDirectory."
-
 param(
   [Alias("c")]
   [Parameter(
@@ -14,7 +10,7 @@ param(
   [Parameter(
     Mandatory,
     Position=1)]
-  [array]$appId,
+  [int]$appId,
 	[Alias("n")]
 	[Parameter(
 		Mandatory,
@@ -22,8 +18,12 @@ param(
 	[string]$folderName
 )
 
+$installationDirectory = ""
+
+Write-Host "The default installation directory is set to $installationDirectory."
+
 # Retrieve credentials
-$credential = Get-StoredCredential -Target target
+$credential = Get-StoredCredential -Target <targetname>
 
 if ($null -eq $credential) {
 	Write-Host "Credentials of 'target' not found."
