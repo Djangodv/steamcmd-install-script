@@ -1,5 +1,8 @@
+#Requires -Modules CredentialManager
+
 $installationDirectory = ""
-$folderName = ""
+
+Write-Host "The default installation directory is set to $installationDirectory."
 
 param(
   [Alias("c")]
@@ -11,11 +14,13 @@ param(
   [Parameter(
     Mandatory,
     Position=1)]
-  [array]$appId
+  [array]$appId,
+	[Alias("n")]
+	[Parameter(
+		Mandatory,
+		Position=2)]
+	[string]$folderName,
 )
-
-# Install module permanently
-# Install-Module -Name CredentialManager -Force
 
 # Retrieve credentials
 $credential = Get-StoredCredential -Target target
