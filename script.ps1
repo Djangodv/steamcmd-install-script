@@ -19,7 +19,7 @@ param(
 	[Parameter(
 		Mandatory,
 		Position=2)]
-	[string]$folderName,
+	[string]$folderName
 )
 
 # Retrieve credentials
