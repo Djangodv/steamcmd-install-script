@@ -29,4 +29,4 @@ if ($null -eq $credential) {
 $username = $credential.GetNetworkCredential().UserName
 $password = $credential.GetNetworkCredential().Password
 
-.\steamcmd +@sSteamCmdForcePlatformBitness 32 +@sSteamCmdForcePlatformType windows +force_install_dir $($installationDirectory + $folderName) +login $username $password $guardCode +app_update $appId validate
+.\steamcmd +@sSteamCmdForcePlatformBitness 32 +@sSteamCmdForcePlatformType windows +force_install_dir $($installationDirectory + $folderName) +login $username $password $guardCode +app_update $appId validate +quit
